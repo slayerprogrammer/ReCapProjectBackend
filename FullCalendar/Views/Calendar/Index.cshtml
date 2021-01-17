@@ -1,0 +1,232 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/fullcalendar.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="calendar">
+
+    </div>
+
+    <script src="~/Scripts/jquery-2.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/fullcalendar/fullcalendar.min.js"></script>
+    <script src="~/Scripts/fullcalendar/locale/tr.js"></script>
+    <script src="~/Scripts/fullcalendar/locale-all.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            GetCalendarEvents();
+        });
+
+        function GetCalendarEvents() {
+            debugger;
+            $('#calendar').fullCalendar({
+                lang: 'tr',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                events: '/Calendar/GetCalendarEvents/',
+                dayClick: function (date, jsEvent, view) {
+                    NewItem(date.format());
+                },
+                eventClick: function (event) {
+                    DeleteItem(event.id);
+                },
+                eventDrop: function (event, delta, revertFunc) {
+                    UpdateItemDate(event);
+                },
+                eventResize: function (event, delta, revertFunc) {
+                    UpdateItemDate(event);
+                }
+            });
+        }
+
+        // Seçilen tarih için yeni event oluşturma, modal açar
+        function NewItem(selectedDate) {
+            var html = '';
+
+            html += '<div class="row form-horizontal">';
+            html += '<div class="col-md-12">';
+            html += '<div class="form-group">';
+            html += '<div class="col-lg-12 control-label">Başlık</div>';
+            html += '<div class="col-lg-12">';
+            html += '<input type="text" class="form-control" id="txtTitle" />';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="row form-horizontal">';
+            html += '<div class="col-md-12">';
+            html += '<div class="form-group">';
+            html += '<div class="col-lg-12 control-label">Başlangıç Tarihi</div>';
+            html += '<div class="col-lg-12">';
+            html += '<input type="text" class="form-control" id="txtStartDate" value="' + selectedDate + '" />';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="row form-horizontal">';
+            html += '<div class="col-md-12">';
+            html += '<div class="form-group">';
+            html += '<div class="col-lg-12 control-label">Bitiş Tarihi</div>';
+            html += '<div class="col-lg-12">';
+            html += '<input type="text" class="form-control" id="txtEndDate" value="' + selectedDate + '" />';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="row form-horizontal">';
+            html += '<div class="col-md-12">';
+            html += '<div class="form-group">';
+            html += '<div class="col-lg-12 control-label">Renk</div>';
+            html += '<div class="col-lg-12">';
+            html += '<select class="form-control" id="ddColor">';
+            html += '<option value="red">Kırmızı</option>';
+            html += '<option value="blue">Mavi</option>';
+            html += '<option value="green">Yeşil</option>';
+            html += '</select>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+
+            bootbox.dialog({
+                message: html,
+                title: "Yeni",
+                size: "large",
+                buttons: {
+                    success: {
+                        label: "Kaydet", className: "btn-success",
+                        callback: function () {
+                            var item = {
+                                id: 0,
+                                title: $('#txtTitle').val(),
+                                color: $('#ddColor').val(),
+                                start: $('#txtStartDate').val(),
+                                end: $('#txtEndDate').val(),
+                                allDay: true
+                            }
+
+                            SaveItem(item);
+                        }
+                    },
+                    danger: {
+                        label: "İptal",
+                        className: "btn-default"
+                    }
+                }
+            });
+        }
+
+        // modal'da girilen verileri kaydeder
+        function SaveItem(item) {
+            $.ajax({
+                type: "POST",
+                url: "/Calendar/AddOrEditItem/",
+                data: "{\"item\":" + JSON.stringify(item) + "}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                error: function (request, status, error) {
+                    var obj = jQuery.parseJSON(request.responseText);
+                    bootbox.alert(obj.Message);
+                },
+                success: function (msg) {
+                    $('#calendar').fullCalendar('refetchEvents');
+                    $('#calendar').fullCalendar('unselect');
+                }
+            });
+        }
+
+        // sürükle bırak veya resize ile tarih bilgilerini güncelleme
+        function UpdateItemDate(selectedItem) {
+            debugger;
+
+            var StartDate = selectedItem.start.format();
+            var EndDate = selectedItem.end != null ? selectedItem.end.format() : selectedItem.start.format();
+
+            $.ajax({
+                type: "POST",
+                url: "/Calendar/UpdateItemDate/",
+                data: "{\"id\":" + selectedItem.id + ", \"start\":'" + StartDate + "', \"end\":'" + EndDate + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                error: function (request, status, error) {
+                    debugger;
+                    var obj = jQuery.parseJSON(request.responseText);
+                    bootbox.alert(obj.Message);
+                },
+                success: function (msg) {
+
+                }
+            });
+        }
+
+        // tıklanan event için silme onayı
+        function DeleteItem(id) {
+            bootbox.dialog({
+                message: "Silmek istediğinize emin misiniz?",
+                title: "Dikkat",
+                buttons: {
+                    success: {
+                        label: "Evet", className: "btn-danger", callback: function () {
+                            FnDelete(id);
+                        }
+                    },
+                    danger: {
+                        label: "Hayır",
+                        className: "btn-default"
+                    }
+                }
+            });
+        }
+
+        // tıklanan event'i siler
+        function FnDelete(id) {
+            jQuery.ajax({
+                type: "POST",
+                url: "/Calendar/DeleteItem/",
+                data: "{'id':'" + id + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                error: function (request, status, error) {
+                    var obj = jQuery.parseJSON(request.responseText);
+                    bootbox.alert(obj.Message);
+                },
+                success: function (msg) {
+                    if (msg) {
+
+                        $('#calendar').fullCalendar('refetchEvents');
+                        $('#calendar').fullCalendar('unselect');
+
+                        bootbox.alert("Silme işlemi başarılı");
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
