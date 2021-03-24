@@ -1,71 +1,171 @@
-# ReCapProject - Araç Kiralama Sistemi
-![cizimbanner2](https://raw.githubusercontent.com/furkanpasaoglu/githubImages/main/Yaz%C4%B1l%C4%B1m%20Geli%C5%9Ftirici%20Yeti%C5%9Ftirme%20kamp%C4%B1.png) 
+# Araç Kiralama Sistemi (Car Rental System) 
+<p align="center">
+<img src="https://image.shutterstock.com/image-vector/rent-car-logo-design-vector-260nw-1072548182.jpg"  alt="Araç Kiralama Sistemi (Rent A Car System)" width="400" height="400"/>
 
-## :pushpin:Getting Started
-![layers](https://github.com/furkanpasaoglu/githubImages/blob/main/About.png)
-<br>
-## :books:Layers  
-![entities](https://github.com/furkanpasaoglu/githubImages/blob/main/Entities%20Layer.png)
-### Entities Layer
-Veritabanı nesneleri için oluşturulmuş **Entities Katmanı**'nda **Abstract** ve **Concrete** olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.  
-![business](https://github.com/furkanpasaoglu/githubImages/blob/main/Business%20Layer.png)
-<br>
-###  Business Layer
-Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetlemek için oluşturulan **Business Katmanı**'nda **Abstract**,**Concrete**,**Utilities** ve **ValidationRules** olmak üzere dört adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.Utilities ve ValidationRules klasörlerinde validation işlemlerinin gerçekleştiği classlar mevcuttur.  
-<br>
-![dal](https://github.com/furkanpasaoglu/githubImages/blob/main/Data%20Access%20Layer.png)
-###  Data Access Layer
-Veritabanı CRUD işlemleri gerçekleştirmek için oluşturulan **Data Access Katmanı**'nda **Abstract** ve **Concrete** olmak üzere iki adet klasör bulunmaktadır.Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.  
-<br>
+![](https://img.shields.io/github/stars/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/forks/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/tag/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/release/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/issues/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
-![core](https://user-images.githubusercontent.com/77868230/107870091-c42f6900-6ea6-11eb-863e-63d30fa2128c.png)
-###  Core Layer
-Bir framework katmanı olan **Core Katmanı**'nda **DataAccess**, **Entities**, **Utilities** olmak üzere 3 adet klasör bulunmaktadır.DataAccess klasörü DataAccess Katmanı ile ilgili nesneleri, Entities klasörü Entities katmanı ile ilgili nesneleri tutmak için oluşturulmuştur. Core katmanının .Net Core ile hiçbir bağlantısı yoktur.Oluşturulan core katmanında ortak kodlar tutulur. Core katmanı ile, kurumsal bir yapıda, alt yapı ekibi ilgilenir.  
-> **⚠ DİKKAT: .**  
-> Core Katmanı, diğer katmanları referans almaz.
+### *About*
+- Bu proje, bir online eğitim platformu olan Kodloma.io'da [Engin Demiroğ](https://github.com/engindemirog) tarafından verilen "Yazılım Geliştirici Yetiştirme Kampı" için Tekrar ve geliştirme projesi (ReCapProject) olması amacıyla oluşturulmuştur. Proje, bir araba kiralama sistemi olup proje dili Türkçedir. 
 
+- This project was created as a Recap project for "Software Developer Training Camp" given by [Engin Demirog](https://github.com/engindemirog) on Kodlama.io, an online education platform. The project is a car rental system and the project language is Turkish.
+  
+ 
+ <p> 
+ <a href="https://www.kodlama.io/" target="_blank"> 
+  <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/Zk7d1MdoSJ6cEShVbfd0" width="50" height="50"> Kodlama.io
+  </a> &nbsp;
 
-![database](https://github.com/furkanpasaoglu/githubImages/blob/main/Database%20and%20Tables.png)
-###  Veritabanı Oluşturma 
-Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritabanı oluşturmak için **Visual Studio 2019** için *View > SQL Server Object Explorer* menü yolunu takip edebilirsiniz.Pencere açıldıktan sonra *SQL Server > (localdb)MSSQLLocalDB* altındaki **Databases** klasörüne sağ tıklayıp Add **New Database** seçeneğini ile veritabanınızı oluşturabilirsiniz. Veritabanı oluşturulduktan sonra **New Query** seçerek aşağıda bulunan Sql File ile veritabanınızda olması gereken tabloları oluşturabilirsiniz.  
-- [SqlQuery.sql](https://github.com/furkanpasaoglu/ReCapProject/blob/master/SQLQuery.sql) *(Tablonuzu linkde gördüğünüz şekilde oluşturun)*
-<br>
-
-![prerequisites](https://raw.githubusercontent.com/furkanpasaoglu/githubImages/main/Prerequisites.png) 
-### Nuget
-```
-Autofac Version="6.1.0"
-Autofac.Extensions.DependencyInjection Version="7.1.0"
-Autofac.Extras.DynamicProxy Version="6.0.0"
-FluentValidation Version="9.5.1"
-Microsoft.AspNetCore.Http Version="2.2.2"
-Microsoft.AspNetCore.Http.Features Version="5.0.3"
-Microsoft.AspNetCore.Http.Abstractions Version="2.2.0"
-Microsoft.EntityFrameworkCore.SqlServer Version="3.1.1"
-Microsoft.IdentityModel.Tokens Version="6.8.0"
-System.IdentityModel.Tokens.Jwt Version="6.8.0"
-```
+-----------------------
+### *IDE* 
+<p> 
+ <a href="https://visualstudio.microsoft.com/tr/vs/" target="_blank"> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/1200px-Visual_Studio_Icon_2019.svg.png" width="25" height="25"> 
+Visual Studio 2019
+  </a> &nbsp;
+ 
+----------------------------------------
+### *Packages*
+- Microsoft.EntityFrameworkCore.SqlServer (3.1.11) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
+- Autofac(6.1.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
+- Autofac.Extras.DynamicProxy(6.0.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
+- FluentValidation(9.5.1) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
+- Autofac.Extensions.DependencyInjection(7.1.0) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
 
 
-## Araba Kiralama Projesi ile ilgili Notlar
-- [SqlQuery.sql](https://github.com/furkanpasaoglu/ReCapProject/blob/master/SQLQuery.sql) *(Tablonuzu linkde gördüğünüz   şekilde oluşturun)*
-- *7.Haftadaki DataAccess katmanında bulunan Abstract kısım Generic Repository Design Pattern ile güncellendi.*
-- *7.Haftadaki DataAccess katmanında bulunan InMemoryCarDal güncellendi. (LINQ kodları eklenmiştir.)*
-- *8.Hafta ödevine ilişkin EntityFramework kodları yazıldı.*
-- *9.Hafta ödevine ilişkin Core Katmanı kodları yazıldı.*
-- *ConsoleUI' da yapılacan Add, Update, Delete işlemlerini ilgili fonksiyonlardan güncelleyebilirsiniz.*
-- *10.Hafta ödevine ilişkin Business Katmanın'da Constant Eklendi ve Messages Kodları Yazıldı.* 
-- *10.Hafta ödevine ilişkin Core Katmanın'da Utilities Eklendi ve Result ve DataResult Kodları Yazıldı..* 
-- *11.Hafta WebAPI Eklendi ve Kodları Yazıldı.*
-- *12.Hafta Autofac ve FluentValidation Kodları Yazıldı.*
-- *12.Hafta Artık projede AOP ve IoC yapıları kullanılıyor.*
-- *13.Hafta Veritabanına CarImages Tablosu Eklendi.*
-- *13.Hafta Projeye Dosya Yükleme (File Helper) Sistemi Yazıldı.*
-- *14.Hafta Veritabanı Güncellendi.*
-- *14.Hafta JWT Entegrasyonu Yapıldı.*
-- *15.Hafta Cache, Transaction ve Performance Entegrasyonu Yapıldı.*
+---------------------------------------
+### *SQL*
+- Sql tablosu oluşturmak için --  [CarRentalProject.sql](https://github.com/slayerprogrammer/ReCapProjectBackend/SQLQuery.sql)
 
-<br>
+<table>
+<tr><th>Cars</th><th>Colors</th><th>Brands</th></tr>
+<tr><td>
 
-## :pencil2:Authors
-* **Furkan Paşaoğlu** - [furkanpasaoglu](https://github.com/furkanpasaoglu)
+| Name  | Data type  |
+|-------|-------------|
+| Id      | INT  |                 
+| Name    | NVARCHAR(50)  |                                                           
+| BrandId      | INT     |
+| ColorId      | INT   |
+| DailyPrice    | DECIMAL |
+| ModelYear      | INT |
+| Descriptions   | NVARCHAR(50) |
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| Name    | NVARCHAR(50) |
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| Name    | NVARCHAR(50) |
+
+</td></tr> </table>
+
+<table>
+<tr><th>Users</th><th>Customers</th><th>Rentals</th></th>
+<tr><td>
+
+| Name  | Data type  |
+|-------|-------------|
+| Id      | INT  |                 
+| FirstName    | NVARCHAR(50)  |
+| LastName    | NVARCHAR(50)  |
+| Email    | NVARCHAR(100)  | 
+| PasswordSalt   | VARBINARY(500)  | 
+| PasswordhASH   | VARBINARY(500)  | 
+| STATUS   | BIT  | 
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| UserId      | INT    |
+| CompanyName    | NVARCHAR(45) |
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| CarId      | INT    |
+| CustomerId      | INT    |
+| RentDate     | DATETIME    |
+| ReturnDate    | DATETIME |
+
+
+</td></tr> </table>
+
+<table>
+<tr><th>CarImages</th><th>OperationClaims</th><th>UserOperationClaims</th></th>
+<tr><td>
+  
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| CarId      | INT    |
+| ImagePath      | VARCHAR(max)    |
+| Date     | DATETIME    |
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| Name    | VARCHAR(250) |
+
+</td><td>
+ 
+| Name       | Data type  |  
+|------------|--------------|
+| Id      | INT    |
+| UserId      | INT    |
+| OperationClaimId      | INT    |
+
+</td></tr> </table>
+
+
+
+
+-----------------------------------
+
+
+### *Updates*
+- 16.02.2021 -- [WebAPI katmanı](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI) kuruldu :heavy_check_mark:
+- 16.02.2021 -- [Business katmanındaki tüm servislerin](https://github.com/slayerprorammer/ReCapProjectBackend/Business/Abstract) [Api karşılığı](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/Controllers) yazıldı :heavy_check_mark:
+- 23.02.2021 -- Autofac desteği eklendi :heavy_check_mark:
+- 23.02.2021 -- FluentValidation desteği eklendi :heavy_check_mark:
+- 23.02.2021 -- AOP desteği eklendi :heavy_check_mark: 
+- 26.02.2021 -- CarImages tablosu oluşturuldu :heavy_check_mark:
+- 26.02.2021 -- Api üzerinden [arabaya resim ekleyecek sistem](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/Controllers/CarImagesController.cs) yazıldı :heavy_check_mark:
+
+![arabaeklendi](https://user-images.githubusercontent.com/69868488/109347202-d4225200-7883-11eb-98a8-adb780d61b46.png)
+
+
+- 26.02.2021 -- Resimler proje içerisindeki [klasördedir](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/wwwroot/Images) :heavy_check_mark:
+- 26.02.2021 -- Bir arabanın en fazla 5 resmi olabilmesi şartı eklendi :heavy_check_mark:
+
+![uyarı](https://user-images.githubusercontent.com/69868488/109347342-1186df80-7884-11eb-8cae-c5ff39f55915.png)
+
+
+
+- 26.02.2021 -- Resmin eklendiği tarihin sistem tarafından atanması işlemi gerçekleştirildi :heavy_check_mark:
+
+- 26.02.2021 -- Bir arabaya ait resimlerin listeleme işlemi yapıldı :heavy_check_mark:
+
+![getimages](https://user-images.githubusercontent.com/69868488/109347374-25324600-7884-11eb-896c-fd7494027116.png)
+
+
+- 26.02.2021 -- Eğer bir arabaya ait resim yoksa, default bir resim gösterme işlemleri yazıldı :heavy_check_mark:
+
+![resimbulunamadı](https://user-images.githubusercontent.com/69868488/109347426-38451600-7884-11eb-9e03-28bf81e6bdb1.png)
+  
+  
+- 03.03.2021 --  JWT entegrasyonu gerçekleştirildi :heavy_check_mark:
+- 06.03.2021 -- [Cache, Transaction ve Performance](https://github.com/slayerprorammer/ReCapProjectBackend/Core/Aspects/Autofac) aspectleri eklendi :heavy_check_mark:
+ 
