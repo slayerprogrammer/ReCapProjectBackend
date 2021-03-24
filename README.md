@@ -48,7 +48,7 @@ Visual Studio 2019
 | ColorId      | INT   |
 | DailyPrice    | DECIMAL |
 | ModelYear      | INT |
-| Descriptions   | NVARCHAR(50) |
+| Descriptions   | NVARCHAR(MAX) |
 
 </td><td>
  
@@ -73,8 +73,8 @@ Visual Studio 2019
 | Name  | Data type  |
 |-------|-------------|
 | Id      | INT  |                 
-| FirstName    | NVARCHAR(50)  |
-| LastName    | NVARCHAR(50)  |
+| FirstName    | NVARCHAR(100)  |
+| LastName    | NVARCHAR(100)  |
 | Email    | NVARCHAR(100)  | 
 | PasswordSalt   | VARBINARY(500)  | 
 | PasswordhASH   | VARBINARY(500)  | 
@@ -86,7 +86,7 @@ Visual Studio 2019
 |------------|--------------|
 | Id      | INT    |
 | UserId      | INT    |
-| CompanyName    | NVARCHAR(45) |
+| CompanyName    | NVARCHAR(100) |
 
 </td><td>
  
