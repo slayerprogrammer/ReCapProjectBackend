@@ -42,7 +42,6 @@ namespace WebAPI.Controllers
         [HttpGet("details")]
         public IActionResult GetCarDetails()
         {
-            //Thread.Sleep(1000);
 
             var result = _carService.GetCarDetails();
             if (result.Success)
@@ -129,29 +128,6 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        
-
-        //[HttpGet("getbrandandcolor")]
-        //public IActionResult GetCarBrandandColor(int brandId,int colorId)
-        //{
-        //    //Thread.Sleep(5000);
-        //    var result = _carService.GetCarBrandandColor(brandId,colorId);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest(result);
-        //}
-
-        //[HttpGet("detailsbymodelyear")]
-        //public IActionResult GetCarByModelYear(int min, int max)
-        //{
-        //    var result = _carService.GetCarDetails(m => m.ModelYear >= min && m.ModelYear <= max);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest(result);
-        //}
+       
     }
 }
