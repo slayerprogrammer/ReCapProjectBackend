@@ -143,19 +143,11 @@ Visual Studio 2019
 - 23.02.2021 -- AOP desteği eklendi :heavy_check_mark: 
 - 26.02.2021 -- CarImages tablosu oluşturuldu :heavy_check_mark:
 - 26.02.2021 -- Api üzerinden [arabaya resim ekleyecek sistem](https://github.com/slayerprorammer/ReCapProjectBackend/blob/main/WebAPI/Controllers/CarImagesController.cs) yazıldı :heavy_check_mark:
-
-![arabaeklendi](https://user-images.githubusercontent.com/69868488/109347202-d4225200-7883-11eb-98a8-adb780d61b46.png)
-
-
 - 24.03.2021 -- Resimler proje içerisindeki [klasördedir](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/WebAPI/wwwroot/Images) :heavy_check_mark:
 - 24.03.2021 -- Bir arabanın en fazla 5 resmi olabilmesi şartı eklendi :heavy_check_mark:
-
 - 24.03.2021 -- Resmin eklendiği tarihin sistem tarafından atanması işlemi gerçekleştirildi :heavy_check_mark:
-
 - 24.03.2021 -- Bir arabaya ait resimlerin listeleme işlemi yapıldı :heavy_check_mark:
-- 
 - 24.03.2021 -- Eğer bir arabaya ait resim yoksa, default bir resim gösterme işlemleri yazıldı :heavy_check_mark:
-  
 - 24.03.2021 --  JWT entegrasyonu gerçekleştirildi :heavy_check_mark:
 - 24.03.2021 -- [Cache, Transaction ve Performance](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/Core/Aspects/Autofac) aspectleri eklendi :heavy_check_mark:
  
