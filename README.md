@@ -25,16 +25,16 @@ Visual Studio 2019
  
 ----------------------------------------
 ### *Packages*
-- Microsoft.EntityFrameworkCore.SqlServer (3.1.11) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
-- Autofac(6.1.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
-- Autofac.Extras.DynamicProxy(6.0.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
-- FluentValidation(9.5.1) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
-- Autofac.Extensions.DependencyInjection(7.1.0) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/Core) olacak şekilde
+- Microsoft.EntityFrameworkCore.SqlServer (3.1.11) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) olacak şekilde
+- Autofac(6.1.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) olacak şekilde
+- Autofac.Extras.DynamicProxy(6.0.0) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) olacak şekilde
+- FluentValidation(9.5.1) -- [Business katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) ve [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) olacak şekilde
+- Autofac.Extensions.DependencyInjection(7.1.0) -- [Core katmanında](https://github.com/slayerprogrammer/ReCapProjectBackend/tree/main/Core) olacak şekilde
 
 
 ---------------------------------------
 ### *SQL*
-- Sql tablosu oluşturmak için --  [CarRentalProject.sql](https://github.com/slayerprogrammer/ReCapProjectBackend/SQLQuery.sql)
+- Sql tablosu oluşturmak için --  [CarRentalProject.sql](https://github.com/slayerprogrammer/ReCapProjectBackend/blob/main/SQLQuery.sql)
 
 <table>
 <tr><th>Cars</th><th>Colors</th><th>Brands</th></tr>
@@ -136,18 +136,18 @@ Visual Studio 2019
 
 
 ### *Updates*
-- 16.02.2021 -- [WebAPI katmanı](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI) kuruldu :heavy_check_mark:
-- 16.02.2021 -- [Business katmanındaki tüm servislerin](https://github.com/slayerprorammer/ReCapProjectBackend/Business/Abstract) [Api karşılığı](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/Controllers) yazıldı :heavy_check_mark:
+- 16.02.2021 -- [WebAPI katmanı](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/WebAPI) kuruldu :heavy_check_mark:
+- 16.02.2021 -- [Business katmanındaki tüm servislerin](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/Business/Abstract) [Api karşılığı](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/WebAPI/Controllers) yazıldı :heavy_check_mark:
 - 23.02.2021 -- Autofac desteği eklendi :heavy_check_mark:
 - 23.02.2021 -- FluentValidation desteği eklendi :heavy_check_mark:
 - 23.02.2021 -- AOP desteği eklendi :heavy_check_mark: 
 - 26.02.2021 -- CarImages tablosu oluşturuldu :heavy_check_mark:
-- 26.02.2021 -- Api üzerinden [arabaya resim ekleyecek sistem](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/Controllers/CarImagesController.cs) yazıldı :heavy_check_mark:
+- 26.02.2021 -- Api üzerinden [arabaya resim ekleyecek sistem](https://github.com/slayerprorammer/ReCapProjectBackend/blob/main/WebAPI/Controllers/CarImagesController.cs) yazıldı :heavy_check_mark:
 
 ![arabaeklendi](https://user-images.githubusercontent.com/69868488/109347202-d4225200-7883-11eb-98a8-adb780d61b46.png)
 
 
-- 26.02.2021 -- Resimler proje içerisindeki [klasördedir](https://github.com/slayerprorammer/ReCapProjectBackend/WebAPI/wwwroot/Images) :heavy_check_mark:
+- 26.02.2021 -- Resimler proje içerisindeki [klasördedir](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/WebAPI/wwwroot/Images) :heavy_check_mark:
 - 26.02.2021 -- Bir arabanın en fazla 5 resmi olabilmesi şartı eklendi :heavy_check_mark:
 
 ![uyarı](https://user-images.githubusercontent.com/69868488/109347342-1186df80-7884-11eb-8cae-c5ff39f55915.png)
@@ -167,5 +167,5 @@ Visual Studio 2019
   
   
 - 03.03.2021 --  JWT entegrasyonu gerçekleştirildi :heavy_check_mark:
-- 06.03.2021 -- [Cache, Transaction ve Performance](https://github.com/slayerprorammer/ReCapProjectBackend/Core/Aspects/Autofac) aspectleri eklendi :heavy_check_mark:
+- 06.03.2021 -- [Cache, Transaction ve Performance](https://github.com/slayerprorammer/ReCapProjectBackend/tree/main/Core/Aspects/Autofac) aspectleri eklendi :heavy_check_mark:
  
