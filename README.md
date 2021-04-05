@@ -2,8 +2,6 @@
 <p align="center">
 <img src="https://image.shutterstock.com/image-vector/rent-car-logo-design-vector-260nw-1072548182.jpg"  alt="Araç Kiralama Sistemi (Rent A Car System)" width="400" height="400"/>
 
-![](https://img.shields.io/github/stars/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/forks/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/tag/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/release/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/github/issues/slayerprogrammer/ReCapProject.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
-
 ### *About*
 - Bu proje, bir online eğitim platformu olan Kodloma.io'da [Engin Demiroğ](https://github.com/engindemirog) tarafından verilen "Yazılım Geliştirici Yetiştirme Kampı" için Tekrar ve geliştirme projesi (ReCapProject) olması amacıyla oluşturulmuştur. Proje, bir araba kiralama sistemi olup proje dili Türkçedir. 
 
